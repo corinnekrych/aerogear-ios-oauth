@@ -15,12 +15,16 @@
  * limitations under the License.
  */
 
-#import <Foundation/Foundation.h>
-#import "AGAdapter.h"
+#ifndef _AEROGEAR_OAUTH_
+#define _AEROGEAR_OAUTH_
 
-@interface AGBaseAdapter : NSObject <AGAdapter>
+#pragma mark - Security
 
-// TODO: move out of here, move it into a util class...
-+(BOOL) accepts:(NSString*) type;
+#pragma mark - Authorization
+#import "AGAuthorizer.h"
+#import "AGAuthzConfig.h"
+#import "AGAccountManager.h"
 
-@end
+
+#endif /* _AEROGEAR_OAUTH_ */
+

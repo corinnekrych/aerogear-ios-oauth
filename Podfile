@@ -1,10 +1,9 @@
-xcodeproj 'AeroGear-iOS.xcodeproj'
+xcodeproj 'AeroGear-OAuth.xcodeproj'
 
 platform :ios, '7.0'
 
-pod 'AFNetworking', '2.2.1'
-pod 'FMDB', '2.1'
-pod 'AeroGear-Crypto', '0.2.3'
+pod 'AeroGear-Pipe', :git => 'https://github.com/corinnekrych/aerogear-ios-pipe.git'
+pod 'AeroGear-Store', :git => 'https://github.com/corinnekrych/aerogear-ios-store.git'
 
 target 'AeroGear-iOSTests', :exclusive => true do
     pod 'OCMock', '2.2.3'
