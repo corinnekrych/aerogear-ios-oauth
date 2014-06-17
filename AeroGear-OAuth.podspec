@@ -12,6 +12,6 @@ Pod::Spec.new do |s|
   s.public_header_files = 'AeroGear-iOS/AeroGear-OAuth.h', 'AeroGear-iOS/Security/Authorizer/AGAuthorizer.h', 'AeroGear-iOS/Security/Authorizer/AGAuthzConfig.h', 'AeroGear-iOS/Security/Authorizer/AGAccountManager.h'
 
   s.requires_arc = true
-  s.dependency 'AeroGear-Pipe'. :git => 'https://github.com/corinnekrych/aerogear-ios-pipe.git'
-  s.dependency 'AeroGear-Store', :git => 'https://github.com/corinnekrych/aerogear-ios-store.git'
+  s.dependency 'AeroGear-Pipe'
+  s.dependency 'AeroGear-Store'
 end
