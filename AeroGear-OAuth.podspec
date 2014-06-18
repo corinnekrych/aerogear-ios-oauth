@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'encrypted' do |ss|
-    ss.dependency 'AeroGear-Store'
+    ss.dependency 'AeroGear-Encrypted-Store'
     ss.dependency 'AeroGear-OAuth/common'
   end
 
