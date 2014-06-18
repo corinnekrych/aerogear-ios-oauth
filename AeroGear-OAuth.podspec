@@ -7,11 +7,24 @@ Pod::Spec.new do |s|
   s.author       = "Red Hat, Inc."
   s.source       = { :git => 'https://github.com/corinnekrych/aerogear-ios-oauth.git' }
   s.platform     = :ios, 7.0
-  s.source_files = 'AeroGear-iOS/**/*.{h,m}'
 
-  s.public_header_files = 'AeroGear-iOS/AeroGear-OAuth.h', 'AeroGear-iOS/Security/Authorizer/AGAuthorizer.h', 'AeroGear-iOS/Security/Authorizer/AGAuthzConfig.h', 'AeroGear-iOS/Security/Authorizer/AGAccountManager.h'
+  s.default_subspec = 'standard'
 
-  s.requires_arc = true
-  s.dependency 'AeroGear-Pipe'
-  s.dependency 'AeroGear-Store'
+  s.subspec 'common' do |ss|
+    ss.source_files = 'AeroGear-iOS/**/*.{h,m}'
+    ss.public_header_files = 'AeroGear-iOS/AeroGear-OAuth.h', 'AeroGear-iOS/Security/Authorizer/AGAuthorizer.h', 'AeroGear-iOS/Security/Authorizer/AGAuthzConfig.h', 'AeroGear-iOS/Security/Authorizer/AGAccountManager.h'
+    ss.requires_arc = true
+    ss.dependency 'AeroGear-Pipe'
+  end
+
+  s.subspec 'standard' do |ss|
+    ss.dependency 'AeroGear-Store'
+    ss.dependency 'AeroGear-OAuth/common'
+  end
+
+  s.subspec 'encrypted' do |ss|
+    ss.dependency 'AeroGear-Store'
+    ss.dependency 'AeroGear-OAuth/common'
+  end
+
 end
